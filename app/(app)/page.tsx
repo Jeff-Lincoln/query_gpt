@@ -1,11 +1,10 @@
 'use client';
 
-import { useAuth, useUser } from '@clerk/nextjs';
+import { useAuth, UserButton, useUser } from '@clerk/nextjs';
 import { useState, useRef, useEffect, useCallback } from 'react';
 import { 
   Send, 
   Bot, 
-  User, 
   Loader2, 
   History, 
   RefreshCw, 
@@ -514,13 +513,14 @@ export default function HomePage() {
                 {/* Enhanced Avatar */}
                 <div className={`flex-shrink-0 w-10 h-10 rounded-2xl flex items-center justify-center shadow-lg ${
                   message.role === 'user' 
-                    ? 'bg-gradient-to-tr from-blue-500 to-purple-600 text-white' 
+                    ? 'bg-gray-200' 
                     : message.isSuccessful === false 
                       ? 'bg-gradient-to-tr from-red-500 to-pink-500 text-white' 
                       : 'bg-gradient-to-tr from-green-500 to-emerald-500 text-white'
                 }`}>
                   {message.role === 'user' ? (
-                    <User className="w-5 h-5" />
+                    // <User className="w-5 h-5" />
+                    <UserButton/>
                   ) : (
                     <Bot className="w-5 h-5" />
                   )}

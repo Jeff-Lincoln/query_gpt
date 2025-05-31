@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./backend_fast/core"
+    ],
+    "postman.settings.dotenv-detection-notification-visibility": false
+}

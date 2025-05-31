@@ -1,0 +1,11 @@
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: PyJWT in c:\users\jeff lincoln\appdata\roaming\python\python312\site-packages (1.7.1)
+Collecting PyJWT
+  Using cached PyJWT-2.10.1-py3-none-any.whl.metadata (4.0 kB)
+Using cached PyJWT-2.10.1-py3-none-any.whl (22 kB)
+Installing collected packages: PyJWT
+  Attempting uninstall: PyJWT
+    Found existing installation: PyJWT 1.7.1
+    Uninstalling PyJWT-1.7.1:
+      Successfully uninstalled PyJWT-1.7.1
+Successfully installed PyJWT-2.10.1

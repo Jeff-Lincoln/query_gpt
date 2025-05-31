@@ -4,8 +4,8 @@ A modern full-stack web application that provides an intelligent question-answer
 
 ## 🚀 Live Demo
 
-- **Frontend**: [Deployed on Vercel/Netlify]
-- **Backend API**: [Deployed on Railway/Render]
+- **Frontend**: https://travelling-gpt.vercel.app/
+- **Backend API**: https://fastapi-backend-ten.vercel.app/
 
 ## 🛠️ Tech Stack
 
@@ -26,8 +26,8 @@ A modern full-stack web application that provides an intelligent question-answer
 - Secure API integration with proper error handling
 
 ### Deployment
-- **Frontend**: Vercel/Netlify
-- **Backend**: Railway/Render/Digital Ocean
+- **Frontend**: Vercel
+- **Backend**: Vercel
 - **Database**: Supabase (hosted PostgreSQL)
 
 ## ✨ Features
@@ -52,7 +52,7 @@ A modern full-stack web application that provides an intelligent question-answer
 
 ## 📋 Prerequisites
 
-- Node.js 18+ and npm/yarn
+- Node.js 18+ and pnpm/yarn
 - Python 3.11+
 - PostgreSQL database (Supabase account)
 - Clerk account for authentication
@@ -63,14 +63,13 @@ A modern full-stack web application that provides an intelligent question-answer
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/qa-system.git
-cd qa-system
+git clone https://github.com/Jeff-Lincoln/query_gpt.git
 ```
 
 ### 2. Backend Setup
 
 ```bash
-cd backend
+cd backend(backend_fast)
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
@@ -109,7 +108,7 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
 Run the frontend:
 
 ```bash
-npm run dev
+npm run dev/pnpm dev
 ```
 
 Visit `http://localhost:3000` to see the application.
@@ -214,13 +213,11 @@ The system uses carefully crafted prompts to ensure high-quality responses from 
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🐛 Known Issues
 
-- [List any known issues or limitations]
+- LLM might take a little long to respond since its like a free tier with deepseek-ai
 
 ## 🗺️ Roadmap
 
@@ -231,7 +228,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email support@yourapp.com or create an issue in this repository.
+For support, email jefflincoln504@gmail.com or create an issue in this repository.
 
 ---
 

@@ -33,7 +33,7 @@ class Settings(BaseSettings):
     APP_DESCRIPTION: str = "AI-powered travel documentation and visa assistance"
     
     # Database Configuration
-    DATABASE_URL: str = "postgresql://postgres.ssrswfufyrvyyakiyarr:7ugxacdF!pJ_4p6@aws-0-eu-central-1.pooler.supabase.com:5432/postgres"
+    DATABASE_URL: str = "yourdburl"
     
     # Additional database fields (to handle your .env variables)
     user: str = ""

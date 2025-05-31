@@ -59,9 +59,9 @@ class Settings(BaseSettings):
     DEBUG: bool = True
     
     # CORS Configuration - Store as strings, convert to lists via validators
-    CORS_ORIGINS: Union[str, List[str]] = Field(default="http://localhost:3000,http://127.0.0.1:3000")
-    ALLOWED_ORIGINS: Union[str, List[str]] = Field(default="http://localhost:3000")
-    
+    CORS_ORIGINS: Union[str, List[str]] = Field(default="http://localhost:3000,http://127.0.0.1:3000,https://travelling-gpt.vercel.app")
+    ALLOWED_ORIGINS: Union[str, List[str]] = Field(default="http://localhost:3000,https://travelling-gpt.vercel.app")
+
     # API Configuration
     API_V1_STR: str = "/api/v1"
     PROJECT_NAME: str = "Q&A System"
@@ -114,7 +114,7 @@ class Settings(BaseSettings):
             return [origin.strip() for origin in v.split(",") if origin.strip()]
         elif isinstance(v, list):
             return v
-        return ["http://localhost:3000", "http://127.0.0.1:3000"]
+        return ["http://localhost:3000", "http://127.0.0.1:3000", "https://travelling-gpt.vercel.app"]
     
     @field_validator("ALLOWED_ORIGINS", mode="before")
     @classmethod
@@ -124,7 +124,7 @@ class Settings(BaseSettings):
             return [origin.strip() for origin in v.split(",") if origin.strip()]
         elif isinstance(v, list):
             return v
-        return ["http://localhost:3000"]
+        return ["http://localhost:3000", "https://travelling-gpt.vercel.app"]
     
     @field_validator("LOG_LEVEL", mode="before")
     @classmethod

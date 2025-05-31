@@ -51,7 +51,7 @@ interface Message {
   rating?: 'like' | 'dislike' | null;
 }
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'https://fastapi-backend-ten.vercel.app';
 
 const suggestedQuestions = [
   "What&apos;s the weather like today?",

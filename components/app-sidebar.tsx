@@ -79,7 +79,7 @@ export function AppSidebar({
   onNewChat,
   onSelectChat,
   currentChatId,
-  apiBaseUrl = 'http://localhost:8000',
+  apiBaseUrl = 'https://fastapi-backend-ten.vercel.app',
   ...props
 }: AppSidebarProps) {
   const { user, isSignedIn } = useUser()

@@ -11,34 +11,23 @@ import {
   User,
   LogOut,
   Clock,
-  Trash2,
   MoreHorizontal,
   Bot,
   Zap,
   History,
   Star,
-  Archive,
-  Filter,
-  Calendar,
   CheckCircle,
   XCircle,
   RefreshCw,
   Loader2,
   TrendingUp,
   Activity,
-  Shield,
-  Sparkles
 } from "lucide-react"
 
 import {
   Sidebar,
   SidebarContent,
-  SidebarGroup,
   SidebarHeader,
-  SidebarMenu,
-  SidebarMenuButton,
-  SidebarMenuItem,
-  SidebarRail,
   SidebarFooter,
 } from "@/components/ui/sidebar"
 
@@ -412,9 +401,9 @@ export function AppSidebar({
           ].map(({ key, icon: Icon, label }) => (
             <button
               key={key}
-              onClick={() => setFilter(key as any)}
+              onClick={() => setFilter(key as 'all' | 'successful' | 'failed' | 'pinned')}
               className={`flex-1 flex flex-col items-center justify-center p-2 rounded-md text-xs font-medium transition-all duration-200 ${
-                filter === key 
+                filter === key
                   ? 'bg-white text-blue-600 shadow-sm transform scale-105' 
                   : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
               }`}

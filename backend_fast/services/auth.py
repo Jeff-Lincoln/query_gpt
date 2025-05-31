@@ -89,21 +89,3 @@ async def get_current_user_optional(credentials = Depends(security)) -> Optional
         print(f"Auth error: {str(e)}")
         return None
 
-
-# from fastapi import Request, HTTPException
-# import requests
-
-# async def get_current_user(request: Request):
-#     auth_header = request.headers.get("Authorization")
-#     if not auth_header or not auth_header.startswith("Bearer "):
-#         raise HTTPException(status_code=401, detail="Unauthorized")
-
-#     token = auth_header.split(" ")[1]
-#     clerk_user_info = requests.get(
-#         "https://api.clerk.dev/v1/me",
-#         headers={"Authorization": f"Bearer {token}"}
-#     )
-#     if not clerk_user_info.ok:
-#         raise HTTPException(status_code=401, detail="Invalid Clerk token")
-
-#     return clerk_user_info.json()

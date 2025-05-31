@@ -126,23 +126,3 @@ def migrate_add_user_id():
 if __name__ == "__main__":
     # Create tables when running this file directly
     create_tables()
-
-
-# from sqlalchemy import Column, Integer, String, Text, DateTime, Boolean
-# from sqlalchemy.sql import func
-# from core.database import Base
-
-# class QASession(Base):
-#     __tablename__ = "qa_sessions"
-    
-#     id = Column(Integer, primary_key=True, index=True)
-#     question = Column(Text, nullable=False)
-#     answer = Column(Text, nullable=False)
-#     llm_provider = Column(String(50), nullable=False)
-#     response_time_ms = Column(Integer)
-#     created_at = Column(DateTime(timezone=True), server_default=func.now())
-#     is_successful = Column(Boolean, default=True)
-#     error_message = Column(Text, nullable=True)
-    
-#     def __repr__(self):
-#         return f"<QASession(id={self.id}, question='{self.question[:50]}...')>"

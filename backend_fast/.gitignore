@@ -2,3 +2,6 @@
 .env.local
 .env
 .vercel
+
+alembic.ini
+alembic.ini

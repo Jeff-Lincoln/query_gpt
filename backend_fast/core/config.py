@@ -8,18 +8,11 @@ from pydantic import field_validator, Field
 # Load environment variables from .env.local and .env files
 # Try .env.local first, then fallback to .env
 import os
-print(f"Current working directory: {os.getcwd()}")
-print(f".env.local exists: {os.path.exists('.env.local')}")
-print(f".env exists: {os.path.exists('.env')}")
+
 
 load_dotenv(".env.local")
 load_dotenv(".env")
 
-# Debug: Check if the key is loaded
-deepseek_key = os.getenv("DEEPSEEK_API_KEY")
-print(f"DEEPSEEK_API_KEY from env: {'Yes' if deepseek_key else 'No'}")
-if deepseek_key:
-    print(f"Key starts with: {deepseek_key[:10]}...")
 
 class Settings(BaseSettings):
     # API Configuration
@@ -33,8 +26,8 @@ class Settings(BaseSettings):
     APP_DESCRIPTION: str = "AI-powered travel documentation and visa assistance"
     
     # Database Configuration
-    DATABASE_URL: str = "postgresql://postgres.ssrswfufyrvyyakiyarr:7ugxacdF!pJ_4p6@aws-0-eu-central-1.pooler.supabase.com:5432/postgres"
-    
+    DATABASE_URL: str = Field(default_factory=lambda: os.getenv("DATABASE_URL", ""), description="Database connection URL")
+
     # Additional database fields (to handle your .env variables)
     user: str = ""
     password: str = ""
@@ -158,9 +151,12 @@ class Settings(BaseSettings):
             return self.ALLOWED_ORIGINS
         return [origin.strip() for origin in str(self.ALLOWED_ORIGINS).split(",")]
 
-# Create settings instance
-settings = Settings()
+# # Create settings instance
+# settings = Settings()
+try:
+    settings = Settings()
+    print("✅ Configuration loaded successfully")
+except Exception as e:
+    print(f"❌ Configuration error: {e}")
+    raise
 
-# Debug print for DEEPSEEK_API_KEY (remove in production)
-if settings.DEBUG:
-    print(f"DEEPSEEK_API_KEY loaded: {'Yes' if settings.DEEPSEEK_API_KEY else 'No'}") 
